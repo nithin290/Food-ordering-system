@@ -1,0 +1,91 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+    <head>
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <title>Yummy | Account</title>
+        <style>
+            legend {
+            display: block;
+        }
+        .box {
+            display: block;
+            margin-top: 200px;
+            width: 40%;
+        }
+        #login {
+            margin-right: 10px;
+        }
+
+        #login, #create_acc {
+            background-color: #4caf4f;
+            color: white;
+            display: inline-block;
+            padding-top: 0px;
+            padding-bottom: opx;
+            width: 120px;
+            height: 60px;
+            border-radius: 10px;
+            cursor: pointer;
+            transition: width 0.25s, height 0.25s;
+            border: 0px;
+        }
+
+        #login:hover, #create_acc:hover{
+            background-color: #3c8b3e;
+        }
+
+        #login:active, #create_acc:active{
+            background-color: #317033;
+            width: 110px;
+            height: 50px;
+        }
+
+        .email, .pswd {
+            height: 50px;
+        }
+
+
+        .email_box, .pswd_box {
+            height: 50px;
+            width: 300px;
+            border-radius: 8px;
+            font-size: large;
+            margin-bottom: 20px;
+        }
+
+        .pswd_box {
+            font-size: 40px;
+        }
+
+        </style>
+    </head>
+    <body>
+        <section class="a">
+            <center>
+                <fieldset class="box">
+                    <h1>Account</h1>
+                    <table class="table">
+                        <tr>
+                            <td class="email">Email ID </td>
+                        </tr>
+                        <tr>
+                            <td class="email"><input type="text" placeholder="type here" class="email_box"></td>
+                        </tr>
+                        <tr>
+                            <td class="pdws"><b>Password</b> </td>
+                        </tr>
+                        <tr>
+                            <td class="pswd"><input type="password" class="pswd_box"></td>
+                        </tr>
+                    </table>
+                    <legend>user account</legend>
+                    <h2>
+                        <button id="login" onclick="">Log-in</button>
+                        <button id="create_acc" onclick="">Create account</button>
+                    </h2>
+                </fieldset>
+            </center>
+        </section>
+        
+    </body>
+</html>

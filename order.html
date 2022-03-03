@@ -3,54 +3,159 @@
     <head>
         <meta name="viewport" content="width=device-width, initial-scale=1.0">
         <title>Yummy | Order</title>
+        <style>
+            body {
+                background-color: rgb(255, 235, 219);
+            }
+
+            .cart_form {
+                margin-left: 400px;
+                margin-right: 400px;
+            }
+
+            .btn {
+                background-color: #4caf4f;
+                color: white;
+                /* display: inline-block; */
+                padding-top: 0px;
+                padding-bottom: opx;
+                width: 120px;
+                height: 50px;
+                border-radius: 10px;
+                cursor: pointer;
+                transition: width 0.25s, height 0.25s;
+                border: 0px;
+            }
+
+            .submit {
+                display: block;
+                float: none;
+            }
+
+            .btn:hover {
+                background-color: #3c8b3e;
+            }
+
+            .btn:active {
+                background-color: #317033;
+                width: 110px;
+                height: 45px;
+            }
+
+            .fields {
+                background-color: black;
+                display: block;
+            }
+
+            .left {
+                /* background-color: #317033; */
+                width: 60%;
+                float: left;
+                height: 100%;
+            }
+
+            .right {
+                /* background-color: #4caf4f; */
+                width: 40%;
+                float: right;
+                height: 100%;
+            }
+
+            .bottom {
+                /* display: block; */
+                float: inline-start;
+                /* background-color: red; */
+            }
+
+            .cart_box, .address, .account, .delivery_status, .cart_box, .helpline, .pricing{
+                border-radius: 8px;
+                border-style: solid;
+                width: 94.5%;
+                margin-top: 10px;
+                margin-left: 5px;
+                margin-bottom: 15px;
+                margin-right: 5px;
+                background-color: white;
+                border-color: rgb(95, 192, 160);
+            }
+
+            .account {
+                padding-top: 30px;
+                padding-bottom: 30px;
+            }
+
+            .address_box {
+                display: block;
+                margin-bottom: 20px;
+                width: 95%;
+                height: 40px;
+                border-radius: 5px;
+                border-color: rgb(167, 156, 143);
+                font-size: large;
+            }
+            #schedule_order {
+                color: red;
+            }
+
+            a:link, a:visited, a:hover, a:active {
+                text-decoration: none;
+            }
+        </style>
     </head>
     <body>
-        <form action="">
+        <form action="" class="cart_form">
             <h1>YOUR ORDER</h1>
 
-            <div class="inputBox">
-                <div class="input">
-                    <span>your name</span>
-                    <input type="text" placeholder="enter your name">
-                </div>
-                <div class="input">
-                    <span>your number</span>
-                    <input type="number" placeholder="enter your number">
-                </div>
-            </div>
-            <div class="inputBox">
-                <div class="input">
-                    <span>your order</span>
-                    <input type="text" placeholder="enter food name">
-                </div>
-                <div class="input">
-                    <span>additional food</span>
-                    <input type="test" placeholder="extra with food">
-                </div>
-            </div>
-            <div class="inputBox">
-                <div class="input">
-                    <span>how musch</span>
-                    <input type="number" placeholder="how many orders">
-                </div>
-                <div class="input">
-                    <span>date and time</span>
-                    <input type="datetime-local">
-                </div>
-            </div>
-            <div class="inputBox">
-                <div class="input">
-                    <span>your address</span>
-                    <textarea name="" placeholder="enter your address" id="" cols="30" rows="10"></textarea>
-                </div>
-                <div class="input">
-                    <span>your message</span>
-                    <textarea name="" placeholder="enter your message" id="" cols="30" rows="10"></textarea>
-                </div>
-            </div>
+            <section class="fields">
+                <section class="left">
+                    <fieldset class="account">
+                        Account
+                    </fieldset>
     
-            <input type="submit" value="Make payment" class="btn">
+                    <fieldset class="cart_box">
+                        <h3>select the quantity of the ordered items. <br> Set the quantity to 0 if the ordered item is to be cancelled before
+                            making the payment</h3>
+                    </fieldset>
     
+                    <fieldset class="address">
+                        Delivery details
+                        <center>
+                            <input type="text" placeholder="House Number" class="address_box">
+                            <input type="text" class="address_box" placeholder="Road number">
+                            <input type="text" class="address_box" placeholder="Area">
+                            <input type="text" class="address_box" placeholder="City">
+                            <input type="text" class="address_box" placeholder="Email Address">
+                            <input type="text" class="address_box" placeholder="10 Digit Mobile Number">
+                            <input type="submit" class="btn address_btn" value="Save address">
+                        </center>
+                    </fieldset>
+                </section>
+    
+                <section class="right">
+                    <fieldset class="delivery_status">
+                        <h4>Delivery time</h4>
+                        <h5>Deliver Now</h5>
+                        <p>Your order will be delivered in 45 minutes</p>
+                        <a href="" id="schedule_order">Schedule for later</a>
+                    </fieldset>
+
+                    <fieldset class="pricing">
+                        <h3>Order Pricing</h3>
+                        <input type="checkbox" name="contactless_delivery" id="">
+                        <label for="contactless_delivery">Opt for contactless delivery</label>
+                    </fieldset>
+
+                    <fieldset class="helpline">
+                        <h3>Need help?</h3>
+                        <h4>Contact-12345 12345</h4>
+                    </fieldset>
+                </section>
+            </section>
+
+            <section class="bottom">
+                <input type="submit" value="Make payment" class="submit btn">
+            </section>
+        
         </form>
     </body>
 </html>

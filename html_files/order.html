@@ -108,6 +108,13 @@
             #items {
                 line-height: 25px;
             }
+
+            .item {
+                border-bottom: 2px dotted;
+                position: relative;
+                /* right: 10%; */
+                border-color: rgb(240, 192, 121);
+            }
         </style>
         <script src="js_files/cart.js"></script>
         <script src="js_files/menu.js"></script>
@@ -126,7 +133,9 @@
                         <h3>select the quantity of the ordered items. <br> Set the quantity to 0 if the ordered item is to be cancelled before
                             making the payment</h3>
 
-                        <div id="items"></div>
+                        <center>
+                            <div id="items"></div>
+                        </center>
                     </fieldset>
     
                     <fieldset class="address">

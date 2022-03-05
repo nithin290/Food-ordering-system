@@ -1,12 +1,25 @@
-var recieved = [];
+// var recieved = [];
+var str = "";
+var elements = [];
 
 window.addEventListener('load', function() {
-    recieved.push(localStorage.getItem('greeting'));
-    console.log(recieved);
-    let str = recieved[recieved.length - 1];
-    let elements = str.split(":");
-    let ele = [];
+    // recieved.push(localStorage.getItem('greeting')); 
+    // let str = recieved[recieved.length - 1];
+    console.log("Hello");
+    console.log("str-" + str);
+    if (str == "") {
+        str = localStorage.getItem('greeting');
+        console.log(str);
+        elements = str.split(":");
+        make_order();
+    }
+    else {
+        make_order();
+    }
+})
 
+function make_order() {
+    let ele = [];
     for(let i = 0 ; i < elements.length-1 ; i++){
         ele[i] = document.createElement("p");
         ele[i].className = "item";
@@ -52,7 +65,7 @@ window.addEventListener('load', function() {
         const element = document.getElementById('items');
         element.appendChild(ele[i]);
     }
-})
+}
 
 function remove_from_cart(id) {
     // alert(id);

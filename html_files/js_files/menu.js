@@ -4,7 +4,7 @@ function disable_button(s){
     console.log(s);
     const button = document.getElementById(s);
     button.style.backgroundColor = 'LightGrey';
-    button.disabled = true
+    button.disabled = true;
     selected_items.push(button.innerHTML);
     var output = "";
     for(var i = 0 ; i < selected_items.length ; i++){

@@ -71,7 +71,7 @@ body {
     width: 94.5%;
     /* margin-top: 10px; */
     margin-left: 5px;
-    margin-bottom: 5px;
+    margin-bottom: 8px;
     margin-right: 5px;
     padding-left: 10px;
     padding-right: 10px;
@@ -90,21 +90,28 @@ body {
 
 .address_box {
     display: block;
-    margin-bottom: 20px;
     width: 95%;
     height: 40px;
     border-radius: 5px;
     background-color: transparent;
     border: 0px;
-    box-shadow: 0px 0px 0px 1px rgba(255, 255, 255, 0.3);       
-    /* border-style: solid; */
-    /* border-color: azure; */
-    margin-top: 10px;
+    box-shadow: 0px 0px 0px 1px rgba(255, 255, 255, 0.3);
     padding-left: 10px;
     padding-right: 10px;
     font-size: large;
     caret-color: aqua;
     color: azure;
+}
+.address_box.box {
+    margin-bottom: 20px;
+}
+.address_box.last_box {
+    margin-bottom: 0px;
+}
+
+.fields.address .address_details {
+    padding-top: 25px;
+    padding-bottom: 10px;
 }
 #schedule_order {
     color: #3add40;
@@ -128,15 +135,36 @@ a:link, a:visited, a:hover, a:active {
 }
 
 .item {
-    border-bottom: 2px dotted;
-    position: relative;
-    /* right: 10%; */
-    border-color: rgb(240, 192, 121);
+    border-left: 0;
+    border-right: 0;
+    border-top: 0;
+    border-bottom-width: 2px;
+    border-style: solid; 
+    /* position: relative; */
+    /* border-color: rgb(240, 192, 121);  */
+    border-image: linear-gradient(.25turn, aqua, rgba(0, 0, 0, 0) 75%) 1;
+
+    /* max-width: 250px;
+     border-top: 0px;
+    border-bottom: 2px;
+    border-left: 0px;
+    border-right: 0px ;
+    max-height: 50px;
+    padding: 1rem;
+    color: aqua;
+    border-width: 2px;
+    border-style: solid;
+    border-image: 
+        linear-gradient(to right, white, rgba(0, 0, 0, 0)) 0 100%; */
 }
 
 .text {
     color: azure;
     font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
+}
+
+.fields.delivery_status .text {
+    padding-top: 0px;
 }
 
 h1 {

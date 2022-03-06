@@ -1,10 +1,7 @@
-// var recieved = [];
 var str = "";
 var elements = [];
 
 window.addEventListener('load', function() {
-    // recieved.push(localStorage.getItem('greeting')); 
-    // let str = recieved[recieved.length - 1];
     console.log("Hello");
     console.log("str-" + str);
     if (str == "") {
@@ -30,6 +27,7 @@ function make_order() {
         let text = document.createTextNode(elements[i]);
         console.log(text);
         ele[i].appendChild(text);
+        ele[i].style.color = 'azure';
 
         let cancel = document.createElement("button");
         cancel.id = "cancel" + i;
@@ -73,3 +71,15 @@ function remove_from_cart(id) {
     // alert(ele);
     ele.parentNode.removeChild(ele);
 }
+
+var scrollToTopBtn = document.getElementById("scrollToTopBtn");
+var rootElement = document.documentElement;
+
+function scrollToTop() {
+  // Scroll to top logic
+  rootElement.scrollTo({
+    top: 0,
+    behavior: "smooth"
+  });
+}
+scrollToTopBtn.addEventListener("click", scrollToTop);

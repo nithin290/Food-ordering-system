@@ -1,0 +1,157 @@
+body {
+    background-image: url("assets/MkEnK8.jpg");
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: cover;
+}
+
+.cart_form {
+    margin-top: 100px;
+    margin-left: 400px;
+    margin-right: 400px;
+    margin-bottom: 100px;
+}
+
+.btn {
+    background-color: #4caf4f;
+    color: white;
+    padding-top: 0px;
+    padding-bottom: opx;
+    width: 120px;
+    height: 50px;
+    border-radius: 10px;
+    cursor: pointer;
+    transition: width 0.25s, height 0.25s;
+    border: 0px;
+}
+
+.submit {
+    display: block;
+    float: none;
+}
+
+.btn:hover {
+    background-color: #3c8b3e;
+}
+
+.btn:active {
+    background-color: #317033;
+    width: 110px;
+    height: 45px;
+}
+
+.left {
+    /* background-color: #317033; */
+    width: 50%;
+    float: left;
+    height: 100%;
+}
+
+.right {
+    /* background-color: #4caf4f; */
+    width: 50%;
+    float: right;
+    height: 100%;
+}
+
+.bottom {
+    /* display: block; */
+    float: inline-start;
+    /* background-color: red; */
+}
+
+.fields {
+    border-radius: 8px;
+    border-style: solid;
+    width: 94.5%;
+    /* margin-top: 10px; */
+    margin-left: 5px;
+    margin-bottom: 5px;
+    margin-right: 5px;
+    padding-left: 10px;
+    padding-right: 10px;
+    padding-top: 15px;
+    padding-bottom: 15px;
+    background-color: transparent;
+    backdrop-filter: blur(10px);
+    border-color: rgb(95, 192, 160);
+    border: 1px solid rgba(95, 192, 160, .5);
+}
+
+.account {
+    padding-top: 30px;
+    padding-bottom: 30px;
+}
+
+.address_box {
+    display: block;
+    margin-bottom: 20px;
+    width: 95%;
+    height: 40px;
+    border-radius: 5px;
+    border-color: rgb(167, 156, 143);
+    background-color: transparent;
+    border: 1px;
+    border-style: solid;
+    border-color: azure;
+    padding-left: 10px;
+    padding-right: 10px;
+    font-size: large;
+    caret-color: aqua;
+    color: azure;
+}
+#schedule_order {
+    color: #3add40;
+}
+
+a:link, a:visited, a:hover, a:active {
+    text-decoration: none;
+}
+
+.item_button {
+    float: right;
+}
+
+#items {
+    line-height: 25px;
+}
+#contactless {
+    position: relative;
+}
+
+.item {
+    border-bottom: 2px dotted;
+    position: relative;
+    /* right: 10%; */
+    border-color: rgb(240, 192, 121);
+}
+
+.text {
+    color: azure;
+}
+
+.text.heading {
+    font-size: 35px;
+    margin-bottom: 25px;
+    font: italic;
+}
+
+input[type="checkbox"]:checked {
+    background-color: #3c8b3e;
+}
+
+footer {
+    display: flex;
+    justify-content: flex-end;
+    padding: 20px;
+}
+
+#scrollToTopBtn {
+    background-color: rgb(70, 69, 69);
+    border: none;
+    color: white;
+    cursor: pointer;
+    font-size: 18px;
+    line-height: 48px;
+    width: 48px;
+}

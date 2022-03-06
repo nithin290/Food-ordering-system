@@ -3,142 +3,32 @@
     <head>
         <meta name="viewport" content="width=device-width, initial-scale=1.0">
         <title>Yummy | Order</title>
-        <style>
-            body {
-                background-color: rgb(255, 235, 219);
-            }
-
-            .cart_form {
-                margin-left: 400px;
-                margin-right: 400px;
-            }
-
-            .btn {
-                background-color: #4caf4f;
-                color: white;
-                /* display: inline-block; */
-                padding-top: 0px;
-                padding-bottom: opx;
-                width: 120px;
-                height: 50px;
-                border-radius: 10px;
-                cursor: pointer;
-                transition: width 0.25s, height 0.25s;
-                border: 0px;
-            }
-
-            .submit {
-                display: block;
-                float: none;
-            }
-
-            .btn:hover {
-                background-color: #3c8b3e;
-            }
-
-            .btn:active {
-                background-color: #317033;
-                width: 110px;
-                height: 45px;
-            }
-
-            .fields {
-                background-color: black;
-                display: block;
-            }
-
-            .left {
-                /* background-color: #317033; */
-                width: 60%;
-                float: left;
-                height: 100%;
-            }
-
-            .right {
-                /* background-color: #4caf4f; */
-                width: 40%;
-                float: right;
-                height: 100%;
-            }
-
-            .bottom {
-                /* display: block; */
-                float: inline-start;
-                /* background-color: red; */
-            }
-
-            .cart_box, .address, .account, .delivery_status, .cart_box, .helpline, .pricing{
-                border-radius: 8px;
-                border-style: solid;
-                width: 94.5%;
-                margin-top: 10px;
-                margin-left: 5px;
-                margin-bottom: 15px;
-                margin-right: 5px;
-                background-color: white;
-                border-color: rgb(95, 192, 160);
-            }
-
-            .account {
-                padding-top: 30px;
-                padding-bottom: 30px;
-            }
-
-            .address_box {
-                display: block;
-                margin-bottom: 20px;
-                width: 95%;
-                height: 40px;
-                border-radius: 5px;
-                border-color: rgb(167, 156, 143);
-                font-size: large;
-            }
-            #schedule_order {
-                color: red;
-            }
-
-            a:link, a:visited, a:hover, a:active {
-                text-decoration: none;
-            }
-
-            .item_button {
-                float: right;
-            }
-
-            #items {
-                line-height: 25px;
-            }
-
-            .item {
-                border-bottom: 2px dotted;
-                position: relative;
-                /* right: 10%; */
-                border-color: rgb(240, 192, 121);
-            }
-        </style>
-        <script src="js_files/cart.js"></script>
-        <script src="js_files/menu.js"></script>
+        <link rel="stylesheet" href="css_files/cart.css">
+        
     </head>
     <body>
         <form action="" class="cart_form">
-            <h1>YOUR ORDER</h1>
+            <span class="text heading">YOUR ORDER</span>
 
-            <section class="fields">
+            <section class="entire">
                 <section class="left">
-                    <fieldset class="account">
-                        Account
-                    </fieldset>
     
-                    <fieldset class="cart_box">
-                        <h3>select the quantity of the ordered items. <br> Set the quantity to 0 if the ordered item is to be cancelled before
-                            making the payment</h3>
+                    <fieldset class="fields cart_box">
+                        <span class="text cart_box_heading">select the quantity of the ordered items. Set the quantity to 0 if the ordered item is to be cancelled before making the payment</span> 
 
                         <center>
                             <div id="items"></div>
                         </center>
                     </fieldset>
     
-                    <fieldset class="address">
+                </section>
+    
+                <section class="right">
+                    <fieldset class="fields account">
+                        <span class="text">Account</span>
+                    </fieldset>
+
+                    <fieldset class="fields address">
                         Delivery details
                         <center>
                             <input type="text" placeholder="House Number" class="address_box">
@@ -150,25 +40,28 @@
                             <input type="submit" class="btn address_btn" value="Save address">
                         </center>
                     </fieldset>
-                </section>
-    
-                <section class="right">
-                    <fieldset class="delivery_status">
-                        <h4>Delivery time</h4>
-                        <h5>Deliver Now</h5>
-                        <p>Your order will be delivered in 45 minutes</p>
-                        <a href="" id="schedule_order">Schedule for later</a>
+
+                    <fieldset class="fields delivery_status">
+                        <span class="text">
+                            <h4>Delivery time</h4>
+                            <h5>Deliver Now</h5>
+                            <p>Your order will be delivered in 45 minutes</p>
+                            <a href="" id="schedule_order">Schedule for later</a>
+                        </span>
                     </fieldset>
 
-                    <fieldset class="pricing">
-                        <h3>Order Pricing</h3>
-                        <input type="checkbox" name="contactless_delivery" id="">
-                        <label for="contactless_delivery">Opt for contactless delivery</label>
+                    <fieldset class="fields pricing">
+                        <div class="text"><h3>Order Pricing</h3>
+                            <input type="checkbox" name="contactless_delivery" id="contactless">
+                            <label for="contactless_delivery"><span class="text">Opt for contactless delivery</span></label>
+                        </div>
                     </fieldset>
 
-                    <fieldset class="helpline">
-                        <h3>Need help?</h3>
-                        <h4>Contact-12345 12345</h4>
+                    <fieldset class="fields helpline">
+                        <span class="text">
+                            <h3>Need help?</h3>
+                            <h4>Contact-12345 12345</h4>
+                        </span>
                     </fieldset>
                 </section>
             </section>
@@ -178,5 +71,10 @@
             </section>
         
         </form>
+        <footer>
+            <button id="scrollToTopBtn">☝️</button>
+        </footer>
     </body>
+    <script src="js_files/cart.js"></script>
+    <script src="js_files/menu.js"></script>
 </html>

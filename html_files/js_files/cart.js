@@ -31,18 +31,9 @@ function make_order() {
 
         let cancel = document.createElement("button");
         cancel.id = "cancel" + i;
+        cancel.className = 'cancel';
         cancel.type = "button";
         cancel.innerHTML = "X";
-        let cancel_style = cancel.style;
-        cancel_style.color = "white";
-        cancel_style.border = 'none';
-        cancel_style.transition = 2.5 + "s";
-        cancel_style.backgroundColor = "red";
-        cancel_style.width = 30 + "px";
-        cancel_style.marginLeft = 10 + "px";
-        cancel_style.height = 30 + "px";
-        cancel_style.float = 'right';
-        cancel_style.bottom = 80 + "%";
         cancel.addEventListener("click", (event) => {
             console.log(event);
             // alert(ele[i].id);
@@ -57,6 +48,7 @@ function make_order() {
         output.style.fontSize = 20 + "px";
         output.style.width = 40 + "px";
         output.style.float = "right";
+        output.style.position = 'relative';
         output.style.height = 25 + "px";
         ele[i].appendChild(output);
 

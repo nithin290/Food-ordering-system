@@ -1,5 +1,5 @@
 body {
-    background-image: url("assets/MkEnK8.jpg");
+    background: url("assets/MkEnK8.jpg") no-repeat center center fixed;
     background-position: center;
     background-repeat: no-repeat;
     background-size: cover;
@@ -54,9 +54,14 @@ body {
     height: 100%;
 }
 
+.entire:after {
+    content: "";
+    display: table;
+    clear: both;
+}
+
 .bottom {
-    /* display: block; */
-    float: inline-start;
+    margin-top: 30px;
     /* background-color: red; */
 }
 
@@ -89,11 +94,12 @@ body {
     width: 95%;
     height: 40px;
     border-radius: 5px;
-    border-color: rgb(167, 156, 143);
     background-color: transparent;
-    border: 1px;
-    border-style: solid;
-    border-color: azure;
+    border: 0px;
+    box-shadow: 0px 0px 0px 1px rgba(255, 255, 255, 0.3);       
+    /* border-style: solid; */
+    /* border-color: azure; */
+    margin-top: 10px;
     padding-left: 10px;
     padding-right: 10px;
     font-size: large;
@@ -113,6 +119,8 @@ a:link, a:visited, a:hover, a:active {
 }
 
 #items {
+    margin-top: 50px;
+    margin-bottom: 50px;
     line-height: 25px;
 }
 #contactless {
@@ -128,12 +136,12 @@ a:link, a:visited, a:hover, a:active {
 
 .text {
     color: azure;
+    font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
 }
 
-.text.heading {
-    font-size: 35px;
-    margin-bottom: 25px;
-    font: italic;
+h1 {
+    font-family: 'Times New Roman', Times, serif;
+    font-weight: 200;
 }
 
 input[type="checkbox"]:checked {
@@ -154,4 +162,46 @@ footer {
     font-size: 18px;
     line-height: 48px;
     width: 48px;
+}
+
+a {
+    word-wrap: break-word;
+    display: inline;
+}
+
+.cancel {
+    background-color: red;
+    color: white;
+    padding-top: 0px;
+    padding-bottom: opx;
+    width: 30px;
+    height: 30px;
+    cursor: pointer;
+    /* transition: width 0.25s, height 0.25s, margin-left 0.25s, border-radius 0.25s, margin-right 0.25s, margin-top 0.25s; */
+    border: 0px;
+    margin-left: 10px;
+    float: right;
+    vertical-align: middle;
+    -webkit-transform: perspective(1px) translateZ(0);
+    transform: perspective(1px) translateZ(0);
+    -webkit-transition-duration: 0.25s;
+    transition-duration: 0.25s;
+    -webkit-transition-property: transform;
+    transition-property: transform;
+}
+
+.cancel:hover {
+    background-color: rgb(211, 1, 1);
+    -webkit-transform: scale(0.9);
+    transform: scale(0.9);
+}
+
+.cancel:active {
+    background-color: rgb(182, 0, 0);
+    margin-top: 2.5px;
+    margin-right: 2.5px;
+    border-radius: 3px;
+    margin-left: 12.5px;
+    width: 25px;
+    height: 25px;
 }

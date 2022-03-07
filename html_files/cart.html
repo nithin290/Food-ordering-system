@@ -11,63 +11,65 @@
             <span class="text heading"><h1>YOUR ORDER</h1></span>
 
             <section class="entire">
-                <section class="left">
-    
-                    <fieldset class="fields cart_box">
-                        <span class="text cart_box_heading">select the quantity of the ordered items. Set the quantity to 0 if the ordered item is to be cancelled before making the payment</span> 
-
-                        <center>
-                            <div id="items"></div>
-
-                            <a href="menu.html"><button type="button" class="btn">Back to Menu</button></a>
-                        </center>
-                    </fieldset>
-    
-                </section>
-    
-                <section class="right">
-                    <fieldset class="fields account">
-                        <span class="text account">Account</span>
-                    </fieldset>
-
-                    <fieldset class="fields address">
-                        <span class="text address heading">Delivery details</span>
-                        <div class="address_details">
-                            <center>
-                                <input type="text" placeholder="House Number" class="address_box box">
-                                <input type="text" class="address_box box" placeholder="Road number">
-                                <input type="text" class="address_box box" placeholder="Area">
-                                <input type="text" class="address_box box" placeholder="City">
-                                <input type="text" class="address_box box" placeholder="Email Address">
-                                <input type="text" class="address_box last_box" placeholder="10 Digit Mobile Number">
-                                <!-- <input type="submit" class="btn address_btn" value="Save address"> -->
-                            </center>
-                        </div>
-                    </fieldset>
-
-                    <fieldset class="fields delivery_status">
-                        <span class="text delivery">
-                            <h4>Delivery time</h4>
-                            <h5>Deliver Now</h5>
-                            <p>Your order will be delivered in 45 minutes</p>
-                            <a href="" id="schedule_order">Schedule for later</a>
-                        </span>
-                    </fieldset>
-
-                    <fieldset class="fields pricing">
-                        <div class="text pricing"><h3>Order Pricing</h3>
-                            <input type="checkbox" name="contactless_delivery" id="contactless">
-                            <label for="contactless_delivery"><span class="text">Opt for contactless delivery</span></label>
-                        </div>
-                    </fieldset>
-
-                    <fieldset class="fields helpline">
-                        <span class="text helpline">
-                            <h3>Need help?</h3>
-                            <h4>Contact-12345 12345</h4>
-                        </span>
-                    </fieldset>
-                </section>
+                <table>
+                    <tr>
+                        <td class="left">
+                            <section class="fields cart_box">
+                                <span class="text cart_box_heading">select the quantity of the ordered items. Set the quantity to 0 if the ordered item is to be cancelled before making the payment</span> 
+        
+                                <center>
+                                    <div id="items"></div>
+        
+                                    <a href="menu.html"><button type="button" class="btn back_to_menu">Back to Menu</button></a>
+                                </center>
+                            </section>
+                        </td>
+                        <td class="left">
+                            <section class="fields account">
+                                <span class="text account">Account</span>
+                            </section>
+        
+                            <section class="fields address">
+                                <span class="text address heading">Delivery details</span>
+                                <div class="address_details">
+                                    <center>
+                                        <input type="text" placeholder="House Number" class="address_box box">
+                                        <!-- <input type="text" class="address_box box" placeholder="Road number"> -->
+                                        <input type="text" class="address_box box" placeholder="Area">
+                                        <input type="text" class="address_box box" placeholder="City">
+                                        <input type="text" class="address_box box" placeholder="Zip code">
+                                        <input type="text" class="address_box box" placeholder="Email Address">
+                                        <input type="text" class="address_box last_box" placeholder="10 Digit Mobile Number">
+                                        <!-- <input type="submit" class="btn address_btn" value="Save address"> -->
+                                    </center>
+                                </div>
+                            </section>
+        
+                            <section class="fields delivery_status">
+                                <span class="text delivery">
+                                    <h4>Delivery time</h4>
+                                    <h5>Deliver Now</h5>
+                                    <p>Your order will be delivered in 45 minutes</p>
+                                    <a href="" id="schedule_order">Schedule for later</a>
+                                </span>
+                            </section>
+        
+                            <section class="fields pricing">
+                                <div class="text pricing"><h3>Order Pricing</h3>
+                                    <input type="checkbox" name="contactless_delivery" id="contactless">
+                                    <label for="contactless_delivery"><span class="text">Opt for contactless delivery</span></label>
+                                </div>
+                            </section>
+        
+                            <section class="fields helpline">
+                                <span class="text helpline">
+                                    <h3>Need help?</h3>
+                                    <h4>Contact-12345 12345</h4>
+                                </span>
+                            </section>
+                        </td>
+                    </tr>
+                </table>
             </section>
 
             <section class="bottom">

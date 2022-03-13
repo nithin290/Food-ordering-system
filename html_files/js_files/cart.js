@@ -165,6 +165,8 @@ function validate() {
     if((house_err && area_err && city_err && email_err && zip_err && mobile_err) == false) {
         return false;
     }
+
+    // window.location.href = "payment.html";
 }
 
 

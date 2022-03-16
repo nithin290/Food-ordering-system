@@ -118,6 +118,7 @@ table {
     caret-color: aqua;
     color: azure;
     overflow-x: scroll;
+    margin-right: 0px;
 }
 .address_box.box {
     margin-bottom: 20px;

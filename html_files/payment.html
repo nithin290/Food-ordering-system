@@ -2,40 +2,41 @@
 <html lang="en" dir="ltr">
     <head>
         <meta name="viewport" content="width=device-width, initial-scale=1.0">
-        <title>Payment | Yummy</title>
+        <title>Yummy | Payment</title>
         <link rel="stylesheet" href="css_files/payment.css">
         <link rel="stylesheet" href="css_files/bootstrap.min.css">
-        <link rel="stylesheet" href="css_files/style.css"> 
+        <link rel="stylesheet" href="css_files/navBarStyle.css">
+        <!-- <link rel="stylesheet" href="css_files/style.css">  -->
     </head>
     <body>
-        <header id="main-navigation">
-            <div id="navigation" data-spy="affix" data-offset-top="20">
-              <div class="container">
-                <div class="row">
-                <div class="col-md-12">
-                  <nav class="navbar navbar-default">
-                    <div class="navbar-header">
-                      <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#fixed-collapse-navbar" aria-expanded="false"> 
-                      <span class="icon-bar top-bar"></span> <span class="icon-bar middle-bar"></span> <span class="icon-bar bottom-bar"></span> 
-                      </button>
-                   </div>
-                      <div id="fixed-collapse-navbar" class="navbar-collapse collapse navbar-right">
-                        <ul class="nav navbar-nav">
-                          <li><a href="home.html">Home</a></li>
-                          <li><a href="food.html">Our Food</a></li>
-                          <li><a href="about.html">About Us</a></li>
-                          <li><a href="faq.html">FAQ</a></li>
-                          <li><a href="order.html" class='current'>Order Now</a></li>
-                          <li><a href="login.html" >Login</a></li>
-                          <li><a href="signUp.html">SignUp</a></li>
-                        </ul>
-                      </div>
-                   </nav>
-                   </div>
-                 </div>
+      <header id="main-navigation">
+        <div id="navigation" data-spy="affix" data-offset-top="20">
+          <div class="container">
+            <div class="row">
+            <div class="col-md-12">
+              <nav class="navbar navbar-default">
+                <div class="navbar-header">
+                  <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#fixed-collapse-navbar" aria-expanded="false"> 
+                  <span class="icon-bar top-bar"></span> <span class="icon-bar middle-bar"></span> <span class="icon-bar bottom-bar"></span> 
+                  </button>
+                  <a class="navbar-brand" href="home.html"><img src="css_files/assets/logo.jpeg" alt="logo" width="30%" style="border-radius: 50%;" class="img-responsive"></a> 
+                </div>
+                  <div id="fixed-collapse-navbar" class="navbar-collapse collapse navbar-right">
+                    <ul class="nav navbar-nav">
+                      <li><a href="home.html">Home</a></li>
+                      <li><a href="food.html">Our Food</a></li>
+                      <li><a href="about.html">About Us</a></li>
+                      <li><a href="faq.html">FAQ</a></li>
+                      <li><a href="order.html">Order Now</a></li>
+                      <li><a href="loginSignUp.html">Login / SignUp</a></li>
+                    </ul>
+                  </div>
+               </nav>
                </div>
-            </div>
-        </header>
+             </div>
+           </div>
+        </div>
+      </header>
 
         <section>
             <form action="" class="payment_form" name="payment_form">
@@ -45,8 +46,39 @@
 
                     <div>
                         <div class="payment_options first">
-                            <input type="radio" name="paymentradio" class="paymentradio" id="add_card" onchange="radio_checked(this)">
-                            <label for="add_card" class="payment_option_field">Add Debit/Credit/ATM card</label>
+                              <input type="radio" name="paymentradio" class="paymentradio" id="add_card" onchange="radio_checked(this)">
+                              <label for="add_card" class="payment_option_field">
+                                Add Debit/Credit/ATM card <br>
+                                <div class="div_card">
+                                  <br>
+                                  <table class="card_details">
+                                    <tr>
+                                      <td>
+                                        <label for="card">Holder name :</label>
+                                      </td>
+                                      <td>
+                                        <input type="text" name="card" class="sec card name" id="card_name" placeholder="type here">
+                                      </td>
+                                    </tr>
+                                    <tr>
+                                      <td>
+                                    <label for="card">Account :</label>
+                                      </td>
+                                      <td>
+                                    <input type="text" name="card" class="sec card acc" id="card_acc" placeholder="type here">
+                                      </td>
+                                    </tr>
+                                    <tr>
+                                      <td>
+                                        <label for="card">CVV :</label>
+                                      </td>
+                                      <td>
+                                    <input type="text" name="card" class="sec card cvv" id="card_cvv" placeholder="type here">                                
+                                      </td>
+                                    </tr>
+                                  </table>
+                                </div>
+                              </label>
                         </div>
                         <div class="payment_options">
                             <input type="radio" name="paymentradio" class="paymentradio" id="net_banking"  onchange="radio_checked(this)"> 
@@ -83,47 +115,47 @@
                 </div>
 
                 <center>
-                    <input type="button" class="btn" value="Review Order">
+                    <input type="submit" class="btn" value="Review Order">
                 </center>
             </form>
         </section>
 
         <footer class="padding-top bg_black">
-            <div class="container">
-              <div class="row">
-                <div class="col-md-4 col-sm-6 footer_column">
-                  <h4 class="heading">About Us</h4>
-                  <hr class="half_space">
-                  <p class="half_space"></p>
-                  <p>Launched in Bangalore, Yummy has grown from a home project to one of the largest food aggregators in the world. We are present in 24 countries and 10000+ cities globally, enabling our vision of better food for more people. We not only connect people to food in every context but work closely with restaurants to enable a sustainable ecosystem.</p>
-                </div>
-      
-                <div class="col-md-4 col-sm-6 footer_column">
-                  <h4 class="heading">Quick Links</h4>
-                  <hr class="half_space">
-                  <ul class="widget_links">
-                    <li><a href="home.html">Home</a></li>
-                    <li><a href="food.html">Our Food</a></li>
-                    <li><a href="about.html">About Us</a></li>
-                    <li><a href="faq.html">Faq's</a></li>              
-                  </ul>
-                </div>
-      
-      
-                <div class="col-md-3 col-sm-6 footer_column">
-                  <h4 class="heading">Get in Touch</h4>
-                  <hr class="half_space">
-                  <p class="address"><i class="icon-location"></i>Yummy, Satellite Town, Karnataka</p>
-                </div> 
+          <div class="container">
+            <div class="row">
+              <div class="col-md-4 col-sm-6 footer_column">
+                <h4 class="heading">About Us</h4>
+                <hr class="half_space">
+                <p class="half_space"></p>
+                <p>Launched in Bangalore, Yummy has grown from a home project to one of the largest food aggregators in the world. We are present in 24 countries and 10000+ cities globally, enabling our vision of better food for more people. We not only connect people to food in every context but work closely with restaurants to enable a sustainable ecosystem.</p>
               </div>
-              <div class="row">
-               <div class="col-md-12">
-                  <div class="copyright clearfix">
-                    <p>Copyright &copy; Yummy 2022 | All Right Reserved</p>
-                  </div>
+    
+              <div class="col-md-4 col-sm-6 footer_column">
+                <h4 class="heading">Quick Links</h4>
+                <hr class="half_space">
+                <ul class="widget_links">
+                  <li><a href="home.html">Home</a></li>
+                  <li><a href="food.html">Our Food</a></li>
+                  <li><a href="about.html">About Us</a></li>
+                  <li><a href="faq.html">Faq's</a></li>              
+                </ul>
+              </div>
+    
+    
+              <div class="col-md-4 col-sm-6 footer_column">
+                <h4 class="heading">Get in Touch</h4>
+                <hr class="half_space">
+                <p>Yummy, Satellite Town, Karnataka</p>
+              </div> 
+            </div>
+            <div class="row">
+             <div class="col-md-12">
+                <div class="copyright clearfix">
+                  <p>Copyright &copy; Yummy 2022 | All Right Reserved</p>
                 </div>
               </div>
             </div>
+          </div>
         </footer>
 
     </body>

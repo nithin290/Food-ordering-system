@@ -55,6 +55,7 @@ body {
 }
 
 .payment_options {
+
     display: flex;
     padding: 5px;
     margin-top: 5px;
@@ -93,4 +94,12 @@ body {
 .payment_option_field {
     padding-left: 5px;
     padding-right: 5px;
+}
+
+.div_card {
+    display: none;
+}
+
+.card_details .sec {
+    margin-left: 10px;
 }

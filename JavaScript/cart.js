@@ -56,8 +56,6 @@ function make_order() {
         output.style.height = 30 + "px";
         output.style.float = "right";
         output.style.position = 'relative';
-        
-
         ele[i].appendChild(output);
 
         const element = document.getElementById('items');

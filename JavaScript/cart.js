@@ -25,6 +25,7 @@ function make_order() {
         ele[i].className = "item";
         ele[i].id = "item" + i;
         ele[i].style.width = 80 + "%";
+        ele[i].style.height = 32 + "px";
         ele[i].style.textAlign = "left";
         ele[i].style.position = "relative";
         let text = document.createTextNode(elements[i]);
@@ -47,13 +48,14 @@ function make_order() {
         let output = document.createElement("input");
         output.type = "number";
         output.id = 'quantity' + i;
+        output.className = 'quantity';
         output.value = 1;
         output.min= 1;
         output.style.fontSize = 20 + "px";
         output.style.width = 40 + "px";
+        output.style.height = 30 + "px";
         output.style.float = "right";
         output.style.position = 'relative';
-        output.style.height = 25 + "px";
         
 
         ele[i].appendChild(output);

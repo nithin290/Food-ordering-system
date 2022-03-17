@@ -2,15 +2,11 @@ var str = "";
 var elements = [];
 
 window.addEventListener('load', function() {
-    console.log("Hello");
     console.log("str-" + str);
     if (str == "") {
         str = localStorage.getItem('greeting');
         console.log(str);
         elements = str.split(":");
-        // for (let i = 0; i < elements.length; i++) {
-        //     elements[i] = [elements[i],'100'];
-        // }
         make_order();
     }
     else {
@@ -19,19 +15,96 @@ window.addEventListener('load', function() {
 })
 
 function make_order() {
-    let ele = [];
-    for(let i = 0 ; i < elements.length-1 ; i++){
-        ele[i] = document.createElement("p");
-        ele[i].className = "item";
-        ele[i].id = "item" + i;
-        ele[i].style.width = 80 + "%";
-        ele[i].style.height = 32 + "px";
-        ele[i].style.textAlign = "left";
-        ele[i].style.position = "relative";
+    // let ele = [];
+    let cart_table = document.createElement("table");
+    cart_table.className = "cart_table";
+    for(let i = 0 ; i < elements.length-1 ; i++) {
+        // ele[i] = document.createElement("p");
+        let tri = document.createElement("tr");
+        tri.id = "cart_table_row_" + i;
+        
+        let td1 = document.createElement("td");
+        td1.className = "cart_table col1";
+
+        let text_p = document.createElement("div");
+        text_p.className = "item";
+        text_p.id = "item" + i;
+        text_p.style.height = 32 + "px";
+        text_p.style.textAlign = "left";
         let text = document.createTextNode(elements[i]);
         console.log(text);
-        ele[i].appendChild(text);
-        ele[i].style.color = 'azure';
+        text_p.appendChild(text);
+        text_p.style.color = 'azure';
+
+        let center1 = document.createElement("center");
+        center1.appendChild(text_p);
+        td1.appendChild(center1);
+        tri.appendChild(td1);
+
+        let td2 = document.createElement("td");
+        td2.className = "cart_table col2";
+
+        let plus = document.createElement("button");
+        plus.id = "plus" + i;
+        plus.className = 'plus';
+        plus.type = "button";
+        plus.innerHTML = "+";
+        plus.addEventListener("click", (event) => {
+            console.log(event);
+            // alert(tri.id);
+
+            // let ele = event.target.id[4];
+            // console.log(ele);
+            // id_ = "item" + ele;
+            // let value = document.getElementById(id_).value;
+            // console.log(value);
+            // document.getElementById(id_).value = value + 1;
+        }, false);
+
+        let center2 = document.createElement("center");
+        center2.appendChild(plus);
+        td2.appendChild(center2);
+        tri.appendChild(td2);
+
+        let td3 = document.createElement("td");
+        td3.className = "cart_table col3";
+
+        let output = document.createElement("input");
+        output.type = "text";
+        output.id = 'quantity' + i;
+        output.disabled = true;
+        output.className = 'quantity';
+        output.value = 1;
+        output.min= 1;
+        output.style.fontSize = 20 + "px";
+        output.style.width = 40 + "px";
+        output.style.textAlign = "center";
+        output.style.height = 30 + "px";
+        let center3 = document.createElement("center");
+        center3.appendChild(output);
+        td3.appendChild(center3);
+        tri.appendChild(td3);
+
+        let td4 = document.createElement("td");
+        td4.className = "cart_table col4";
+
+        let minus = document.createElement("button");
+        minus.id = "minus" + i;
+        minus.className = 'minus';
+        minus.type = "button";
+        minus.innerHTML = "-";
+        minus.addEventListener("click", (event) => {
+            console.log(event);
+            // alert(tri.id);
+        }, false);
+
+        let center4 = document.createElement("center");
+        center4.appendChild(minus);
+        td4.appendChild(center4);
+        tri.appendChild(td4);
+
+        let td5 = document.createElement("td");
+        td5.className = "cart_table col5";
 
         let cancel = document.createElement("button");
         cancel.id = "cancel" + i;
@@ -40,27 +113,17 @@ function make_order() {
         cancel.innerHTML = "X";
         cancel.addEventListener("click", (event) => {
             console.log(event);
-            // alert(ele[i].id);
-            remove_from_cart(ele[i].id);
+            remove_from_cart(tri.id);
         }, false);
-        ele[i].appendChild(cancel);
 
-        let output = document.createElement("input");
-        output.type = "number";
-        output.id = 'quantity' + i;
-        output.className = 'quantity';
-        output.value = 1;
-        output.min= 1;
-        output.style.fontSize = 20 + "px";
-        output.style.width = 40 + "px";
-        output.style.height = 30 + "px";
-        output.style.float = "right";
-        output.style.position = 'relative';
-        ele[i].appendChild(output);
+        let center5 = document.createElement("center");
+        center5.appendChild(cancel);
+        td5.appendChild(center5);
+        tri.appendChild(td5);
 
-        const element = document.getElementById('items');
-        element.appendChild(ele[i]);
+        cart_table.appendChild(tri);
     }
+    document.getElementById("items").appendChild(cart_table);
 }
 
 function remove_from_cart(id) {
@@ -70,20 +133,27 @@ function remove_from_cart(id) {
     ele.parentNode.removeChild(ele);
 }
 
-var scrollToTopBtn = document.getElementById("scrollToTopBtn");
-var rootElement = document.documentElement;
-
-function scrollToTop() {
-  // Scroll to top logic
-  rootElement.scrollTo({
-    top: 0,
-    behavior: "smooth"
-  });
+function prevent_change(e) {
+    e.preventDefault();
 }
-scrollToTopBtn.addEventListener("click", scrollToTop);
 
 function validate() {
+
+    document.getElementById("error_msg_house").style.display = "none";
+    document.getElementById("error_msg_area").style.display = "none";
+    document.getElementById("error_msg_city").style.display = "none";
+    document.getElementById("error_msg_zip").style.display = "none";
+    document.getElementById("error_msg_email").style.display = "none";
+    document.getElementById("error_msg_mobile").style.display = "none";
+    document.getElementById("box1").style.border = 1 + "px solid rgb(255, 255, 255, 0.3)";
+    document.getElementById("box2").style.border = 1 + "px solid rgb(255, 255, 255, 0.3)";
+    document.getElementById("box3").style.border = 1 + "px solid rgb(255, 255, 255, 0.3)";
+    document.getElementById("box4").style.border = 1 + "px solid rgb(255, 255, 255, 0.3)";
+    document.getElementById("box5").style.border = 1 + "px solid rgb(255, 255, 255, 0.3)";
+    document.getElementById("box6").style.border = 1 + "px solid rgb(255, 255, 255, 0.3)";
+
     house_number = document.myform.house_number.value;
+    console.log(house_number);
     area = document.myform.area.value;
     city = document.myform.city.value;
     email = document.myform.email.value;
@@ -94,6 +164,8 @@ function validate() {
 
     if(house_number == "") {
         console.log("House error", "Please enter your house number");
+        document.getElementById("error_msg_house").style.display = "inline";
+        document.getElementById("box1").style.border = 2 + "px solid red";
     } 
     else {
         house_err = false;
@@ -101,6 +173,8 @@ function validate() {
 
     if(area == "") {
         console.log("Area error", "Please enter your area");
+        document.getElementById("error_msg_area").style.display = "inline";
+        document.getElementById("box2").style.border = 2 + "px solid red";
     }
     else {
         area_err = false;
@@ -108,62 +182,79 @@ function validate() {
 
     if(city == "") {
         console.log("City error", "Please enter your city name");
+        document.getElementById("error_msg_city").style.display = "inline";
+        document.getElementById("box3").style.border = 2 + "px solid red";
     }
     else {
         let regex = /^[A-Za-z]+$/;                
         if(regex.test(city) === false) {
             console.log("city error", "Please enter a valid city");
+            document.getElementById("error_msg_city").style.display = "inline";
+            document.getElementById("box3").style.border = 2 + "px solid red";  
         } 
         else {
-            // console.log("nameErr", "");
             city_err = false;
         }
     }
 
     if(zip_code == "") {
         console.log("zipcode error", "Please enter your zipcode");
+        document.getElementById("error_msg_zip").style.display = "inline";
+        document.getElementById("box4").style.border = 2 + "px solid red";
+
     }
     else {
         let regex = /^\d{6}$/;             
         if(regex.test(zip_code) === false) {
             console.log("zipcode error", "Please enter a valid zipcode");
+            document.getElementById("error_msg_zip").style.display = "inline";
+            document.getElementById("box4").style.border = 2 + "px solid red";
         } 
         else {
-            // console.log("nameErr", "");
             zip_err = false;
         }
     }
 
     if(email == "") {
         console.log("Email error", "Please enter your email address");
+        document.getElementById("error_msg_email").style.display = "inline";
+        document.getElementById("box5").style.border = 2 + "px solid red";
     }
     else {
         let regex = /^\w[._\d\w]*[\w\d]@\w+.com$/;             
         if(regex.test(email) === false) {
             console.log("Email error", "Please enter a valid email address");
+            document.getElementById("error_msg_email").style.display = "inline";
+            document.getElementById("box5").style.border = 2 + "px solid red";
         } 
         else {
-            // console.log("nameErr", "");
             email_err = false;
         }
     }
 
     if(mobile == "") {
         console.log("mobile number error", "Please enter your mobile number");
+        document.getElementById("error_msg_mobile").style.display = "inline";
+        document.getElementById("box6").style.border = 2 + "px solid red";
     }
     else {
         let regex = /^\d{10}$/;             
         if(regex.test(mobile) === false) {
             console.log("moblie number error", "Please enter a valid moblie number");
+            document.getElementById("error_msg_mobile").style.display = "inline";
+            document.getElementById("box6").style.border = 2 + "px solid red";
         } 
         else {
-            // console.log("nameErr", "");
             mobile_err = false;
         }
     }
 
-    if((house_err && area_err && city_err && email_err && zip_err && mobile_err) == false) {
+    if((house_err || area_err || city_err || email_err || zip_err || mobile_err) == true) {
+        console.log('here');
         return false;
+    }
+    else {
+        
     }
 
     // window.location.href = "payment.html";

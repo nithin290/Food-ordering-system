@@ -15,11 +15,9 @@ window.addEventListener('load', function() {
 })
 
 function make_order() {
-    // let ele = [];
     let cart_table = document.createElement("table");
     cart_table.className = "cart_table";
     for(let i = 0 ; i < elements.length-1 ; i++) {
-        // ele[i] = document.createElement("p");
         let tri = document.createElement("tr");
         tri.id = "cart_table_row_" + i;
         
@@ -51,14 +49,11 @@ function make_order() {
         plus.innerHTML = "+";
         plus.addEventListener("click", (event) => {
             console.log(event);
-            // alert(tri.id);
-
-            // let ele = event.target.id[4];
-            // console.log(ele);
-            // id_ = "item" + ele;
-            // let value = document.getElementById(id_).value;
-            // console.log(value);
-            // document.getElementById(id_).value = value + 1;
+            id_ = "quantity" + i;
+            let ele = document.getElementById(id_);
+            let value = ele.value;
+            console.log(value);
+            document.getElementById(id_).value = +value + 1;
         }, false);
 
         let center2 = document.createElement("center");
@@ -95,7 +90,19 @@ function make_order() {
         minus.innerHTML = "-";
         minus.addEventListener("click", (event) => {
             console.log(event);
-            // alert(tri.id);
+            console.log(event);
+            id_ = "quantity" + i;
+            let ele = document.getElementById(id_);
+            let value = ele.value;
+            console.log(value);
+            if (value > 1)
+                document.getElementById(id_).value = +value - 1;
+            // if (value == 2) {
+            //     minus.disabled = 'true';
+            //     if(ele.parentElement.classList.contains("minus"));
+            //     ele.parentElement.classList.remove('minus');
+            //     ele.parentElement.classList.add('minus_disabled');
+            // }
         }, false);
 
         let center4 = document.createElement("center");
@@ -127,9 +134,7 @@ function make_order() {
 }
 
 function remove_from_cart(id) {
-    // alert(id);
     var ele = document.getElementById(id);
-    // alert(ele);
     ele.parentNode.removeChild(ele);
 }
 
@@ -253,11 +258,6 @@ function validate() {
         console.log('here');
         return false;
     }
-    else {
-        
-    }
-
-    // window.location.href = "payment.html";
 }
 
 

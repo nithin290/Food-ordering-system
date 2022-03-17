@@ -21,7 +21,7 @@ body {
 }
 
 #box1 {
-    width: 100%;
+    /* width: 100%; */
     margin: 1%;
     padding-right: 10px;
     /* padding: 10px; */
@@ -34,7 +34,7 @@ body {
 }
 
 #box2 {
-    width: 100%;
+    /* width: 100%; */
     margin: 1%;
     padding-right: 10px;
     /* padding: 10px; */
@@ -67,13 +67,21 @@ body {
     margin: 1%;
 }
 
-@media screen and (max-width: 768px) {
+@media screen and (max-width: 1250px) {
     #north_indian, #south_indian, #fast_food, #italian, #cell1, #cell2{
       width: 100%; /* The width is 100%, when the viewport is 800px or smaller */
     }
     #cell1, #cell2{
         display: block;
+        margin : 0%;
     }
+  }
+
+  @media screen and (max-width: 660px){
+      #table {
+          margin: 0%;
+          width: 100%;
+      }
   }
 
   #North_Indian {

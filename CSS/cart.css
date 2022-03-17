@@ -285,6 +285,18 @@ a {
     transition-property: transform;
 }
 
+.minus_disabled, .minus_disabled:hover, .minus_disabled:active {
+    background-color: rgb(65, 64, 64);
+    color: rgb(172, 172, 172);
+    padding-top: 0px;
+    padding-bottom: 0px;
+    width: 25px;
+    height: 25px;
+    cursor: pointer;
+    border: 0px;
+    vertical-align: middle;
+}
+
 .plus:hover , .minus:hover{
     background-color: rgb(105, 105, 105);
     -webkit-transform: scale(0.9);

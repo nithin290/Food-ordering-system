@@ -128,6 +128,11 @@ body {
     float: right;
 }
 
+.error{
+    color: red;
+    font-size: .8rem;
+}
+
 @media screen and (max-width: 1250px) {
     .container{
       width: 100%; /* The width is 100%, when the viewport is 800px or smaller */
